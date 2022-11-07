@@ -4,7 +4,7 @@ import DuckDuckGo_API
 
 url_ddg = "https://api.duckduckgo.com"
 
-PRESIDEDENTS = ['George Washington', 'John Adams', 'Thomas Jefferson',
+PRESIDENTS = ['George Washington', 'John Adams', 'Thomas Jefferson',
                 'James Madison', 'James Monroe', 'John Quincy Adams',
                 'Andrew Jackson', 'Martin Van Buren', 'William Henry Harrison',
                 'John Tyler', 'James K. Polk', 'Zachary Taylor',
@@ -27,7 +27,7 @@ def test_ddg0():
     assert "DuckDuckGo" in rsp_data["Heading"]
 
 
-@pytest.mark.parametrize('president', PRESIDEDENTS)
+@pytest.mark.parametrize('president', PRESIDENTS)
 def test_ddg_query(president):
     presidents_list = DuckDuckGo_API.ddg_query()
     assert president in presidents_list
