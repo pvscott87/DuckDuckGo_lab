@@ -7,9 +7,10 @@ def ddg_query():
     resp = requests.get(url_ddg + "/?q=presidents+of+the+united+states&format=json")
     rsp_data = resp.json()
     for data in  rsp_data["RelatedTopics"]:
-        president = data["Text"]
-
-        presidents_list.append(president)
+        info = data["Text"]
+        name = info.split(" -")[0]
+        ##president = name.split(" ")[-1]
+        presidents_list.append(name)
     return presidents_list
 
 def main():
